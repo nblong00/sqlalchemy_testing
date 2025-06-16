@@ -16,13 +16,7 @@ class User(Base):
     nickname = Column(String)
 
     def __repr__(self):
-        return f'<User(name = {self.name}, full_name = {self.full_name}, nickname = {self.nickname})'
+        return f'<User(name = {self.name}, full_name = {self.full_name}, nickname = {self.nickname})>'
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine)
-    new_users = [User(name='Grace', full_name='Grace Hopper', nickname='Pioneer'), User(name='Alan', full_name='Alan Turing', nickname='Computer Scientist'),  User(name='Katherine', full_name='Katherine Johnson', nickname='')]
-    session.add_all(new_users)
-    session.commit()
-
-    for user in new_users:
-        print(user.id)
